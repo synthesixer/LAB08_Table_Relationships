@@ -230,6 +230,40 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 
 ---
 
+##  วิธีการติดตั้งและรันโปรเจกต์
+
+**สิ่งที่ต้องเตรียมบนเครื่อง**
+- Java 21 (หรือเวอร์ชันที่รองรับ Spring Boot 3.x)
+- Maven (wrapper `./mvnw` มีให้)
+- PostgreSQL 16 (หรือเวอร์ชันที่รองรับ)
+
+### 1. Clone Repository
+```bash
+git clone https://github.com/yourusername/lab8-673380417-sec1.git
+cd lab8-673380417-sec1
+```
+
+### 2. ตั้งค่า Database
+```sql
+CREATE DATABASE lab8shop;
+```
+แก้ไขไฟล์ `src/main/resources/application.properties` ให้ตรงกับ username/password ของ PostgreSQL
+
+### 3. Build & Run
+```bash
+./mvnw spring-boot:run   # Windows: mvnw.cmd spring-boot:run
+```
+แอปจะรันที่ <http://localhost:8080> และ UI ที่ `/products`
+
+### 4. ทดสอบ (optional)
+```bash
+./mvnw test
+```
+
+---
+
+
+
 ## 🔄 URL Mappings
 
 | Method | URL | หน้าที่ |
